@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 
 app.post('/', (req, res) => {
-  const movieName = req.body.movieName;
+  const movieName = req.body.movieName.split(' ').join('%20');;
   const apiKey = 'cfd6f31c&t';
   let url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieName}`
   console.log(url);
