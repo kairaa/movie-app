@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+<div class="container">
+    <div class="movie-container">
+      <div class="col-lg-6">
+        <img src="<%=movieInfo.poster %>" alt="<%= movieInfo.movieName %> poster">
+      </div>
+      <div class="col-lg-6">
+        <h1><%= movieInfo.movieName %></h1>
+        <h4> <%= movieInfo.year %></h4>
+        <h4><%= movieInfo.genre %></h4>
+        <h4>Meta Score: <%= movieInfo.metascore %></h4>
+        <h4>IMDB Score: <%= movieInfo.imdb %></h4>
+      </div>
+    </div>
+  <%- include('partials/searchBar'); -%>
+</div>
+<%- include('partials/footer'); -%>
