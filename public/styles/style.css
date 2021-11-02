@@ -46,6 +46,10 @@ button {
   color: white;
   width: 200px;
 }
+input{
+  margin: 0 auto 0 auto;
+  width: 35% !important;
+}
 
 .movie-container{
   margin: 40px 0 40px 0 !important;
@@ -53,4 +57,32 @@ button {
 
 .movie-container img{
   width: 50%;
+}
+
+.container-fluid{
+  text-align: center;
+  background-image: url('../images/background.png');
+  background-size: cover;
+  height: 100%;
+}
+
+h4{
+  font-size: 1.4rem;
+}
+.score-div{
+  display: flex;
+  justify-content: center;
+}
+
+.score-area{
+  width: 200px;
+  height: 200px;
+  margin: 0 5%;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+.score-area h4{
+  font-size: 3rem;
+  font-weight: bold;
 }

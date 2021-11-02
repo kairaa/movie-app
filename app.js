@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const https = require('http');
+const https = require('https');
 
 const app = express();
 
@@ -16,13 +16,14 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
   const movieName = req.body.movieName.split(' ').join('+');;
   const apiKey = 'cfd6f31c&t';
-  let url = `http://www.omdbapi.com/?apikey=${apiKey}&t=${movieName}`
+  let url = `https://www.omdbapi.com/?apikey=${apiKey}&t=${movieName}`
   console.log(url);
 
   https.get(url, (response) => {
     console.log(response.statusCode);
     if (response.statusCode === 200) {
       response.on('data', (data) => {
+        console.log(data);
         let movieData = JSON.parse(data);
         if(movieData.Response === 'True'){
           res.render('movie', {
@@ -34,6 +35,7 @@ app.post('/', (req, res) => {
               director: movieData.Director,
               metascore: movieData.Metascore,
               imdb: movieData.imdbRating,
+              plot: movieData.Plot,
             }
           })
         }
